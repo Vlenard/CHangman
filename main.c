@@ -346,15 +346,19 @@ int rootList(char *par0, char *par1)
     }
     else if (strcmp(par0, "remove") == 0)
     {
-        bool contains = false;
+        int index = -1;
         for (int i = 0; i < wordsSize; i++)
-            if (strcmp(par1, words[i]) == 0)
-                contains = true;
+            if (strcmp(par1, words[i]) == 0){
+                index = i;
+                break;
+            }
 
-        if (contains)
+        if (index != -1)
         {
+            for (int i = index; i < wordsSize - 1; i++)
+                words[i] = words[i + 1];
+
             wordsSize--;
-            free(words[wordsSize]);
             saveWords();
         }
         else
