@@ -300,7 +300,7 @@ int rootPlay(char *par0, char *par1)
     if (par0[0] == '\0')
     {
         index = (rand() % (wordsSize - 1 + 1)) + 1;
-        word = words[index - 1];
+        strcpy(word, words[index - 1]);
     }
     else
     {
@@ -356,7 +356,7 @@ int rootList(char *par0, char *par1)
         if (index != -1)
         {
             for (int i = index; i < wordsSize - 1; i++)
-                words[i] = words[i + 1];
+                strcpy(words[i], words[i + 1]);
 
             wordsSize--;
             saveWords();
