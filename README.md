@@ -1,5 +1,5 @@
 # C Hangman
-A simple hangman game
+A simple hangman game.
 
 ## Concept
 A single file game with some extra features to make it not so boring.
